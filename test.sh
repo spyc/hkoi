@@ -15,7 +15,7 @@ gcc -Wall -o test.out $submit
 for file in $dist; do
     echo "Ready To Test..."
     ./test.out < $file > output
-    if [[ $? == 0 ]]; then
+    if [[ $? -eq 0 ]]; then
         echo "Run Test Finish!"
         cmp --silent "$file.out" output
         if [ $? == 0 ];then
